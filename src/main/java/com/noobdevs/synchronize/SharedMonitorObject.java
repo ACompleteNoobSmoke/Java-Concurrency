@@ -1,8 +1,11 @@
 package com.noobdevs.synchronize;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class SharedMonitorObject {
     public static volatile Object databaseMonitor = null;
 
+    
 
     private int counter = 0;
 
