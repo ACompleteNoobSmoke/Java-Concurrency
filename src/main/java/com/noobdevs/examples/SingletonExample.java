@@ -2,19 +2,18 @@ package com.noobdevs.examples;
 
 public class SingletonExample {
 
-    private static volatile Object dbConnection = null;
+    private static volatile Object dbInstance = null;
 
-    private SingletonExample(){}
+    private SingletonExample() {}
 
-    public static Object getDbConnection() {
-        if (dbConnection == null) {
-            synchronized (SingletonExample.class) {
-                if (dbConnection == null) {
-                    dbConnection = new Object();
+    public static Object getDbInstance() {
+        if (dbInstance == null) {
+            synchronized(SingletonExample.class) {
+                if (dbInstance == null) {
+                    dbInstance = new Object();
                 }
             }
         }
-
-        return dbConnection;
+        return dbInstance;
     }
 }
